@@ -1,35 +1,83 @@
 import React from 'react';
-import { ButtonBase, Menu, MenuItem } from '@mui/material';
-import Layout from '../components/Layout/Layout';
-import '../style/DropdownMenu.css';
+import { Button, Menu, MenuItem } from '@mui/material';
 
+import "../style/Dashboard.css";
+import { Link } from 'react-router-dom';
+
+import LoginIcon from '@mui/icons-material/Login';
+
+import DescriptionIcon from '@mui/icons-material/Description';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import BackPag from '../images/dashboard2.jpg';
+import Footer from '../components/Layout/Footer';
+import Logd from '../images/dashboaard logo.png';
 function Dashboard() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  
 
   return (
-    <>
-      <Layout>
-        <ButtonBase onClick={handleClick}>Open Menu</ButtonBase>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          className="DropdownMenu" 
-        >
-          <MenuItem onClick={handleClose}>Blog</MenuItem>
-          <MenuItem onClick={handleClose}>Terms and Condition</MenuItem>
-          <MenuItem onClick={handleClose}>Site</MenuItem>
-        </Menu>
-      </Layout>
-    </>
+   
+      
+        <>
+        <div >
+         
+        <nav className='navbar'>
+          <div className='navbar-logo'>
+          <img src={Logd} style={{
+            height:'auto',
+            width: '200px',
+          }}
+          />
+          </div>
+          
+          <ul className='navbar-list'>
+            <li className='navbar-item'>
+              <Link to="/login">
+             
+                <LoginIcon/>
+
+                Login
+              </Link>
+            </li>
+
+            
+           
+              <li className='navbar-item'>
+              <Link to="/terms">
+             
+               <DescriptionIcon/>
+               
+                Terms
+              </Link>
+            </li>
+            <li className='navbar-item'>
+              <Link to="/about">
+              
+              <FactCheckIcon/>
+               
+                About
+              </Link>
+            </li>
+            <li className='navbar-item'>
+              <Link to="/contact">
+             
+              <ContactPageIcon/>
+              
+                Contact
+              </Link>
+            </li>
+          </ul>
+
+        </nav>
+        <div className='container'>
+        <img src={BackPag} className='backg'
+          />
+        </div>
+        
+             </div> 
+             <Footer/>
+      </>
+  
   );
 }
 

@@ -61,7 +61,7 @@ const Category = () => {
           </div>
          
         
-            <div className='text-container'>
+            <div className='text-containerr'>
             <h3>Embark on your path to success today by taking proactive steps to</h3>
             <h3>enhance your visibility and maximize profits for your products or services.</h3>
             <br/>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../style/LoginStyles.css";
 
 import LogonImage from "../images/logss.jfif"
+import Layout from '../components/Layout/Layout';
 
 function Login({ handleLogin }) {
   const [formData, setFormData] = useState({
@@ -36,7 +37,10 @@ function Login({ handleLogin }) {
   };
 
   return (
-    <div className='login-container'>
+    <>
+    <Layout>
+    <div className='login-containery'>
+
       <img src={LogonImage} alt="Logo" className="logon-image" /> {/* Add the logo image */}
       <h2>Login</h2>
       <form onSubmit={handleLoginSubmit}>
@@ -118,6 +122,8 @@ function Login({ handleLogin }) {
         </div>
       )}
     </div>
+    </Layout>
+    </>
   );
 }
 

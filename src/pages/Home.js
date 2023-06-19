@@ -25,7 +25,7 @@ const Home = () => {
           <p>Join the Global Community of Everyday Buying and Selling!</p>
           <br/>
           <br/>
-          <Link to="/category">
+          <Link to="/biddingcart">
           <button className='get-started-button' >Explore Listing</button>
           </Link>
           </div>
